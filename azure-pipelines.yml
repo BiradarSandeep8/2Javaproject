@@ -6,7 +6,7 @@ pool:
 
 variables:
   containerRegistry: 'azuredb2acr.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/docker/Dockerfile'  # Update the path to the Dockerfile
+  dockerfilePath: '$(Build.SourcesDirectory)/docker/Dockerfile'
   imageName: 'biradarsandeepsamplejavaapp'
   tag: '$(Build.BuildId)'
 
