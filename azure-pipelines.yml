@@ -5,9 +5,8 @@ pool:
   name: WindowVm
 
 variables:
-  # Define your Azure Container Registry information
   containerRegistry: 'azuredb2acr.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/docker/Dockerfile'  # Update the path to the Dockerfile
   imageName: 'biradarsandeepsamplejavaapp'
   tag: '$(Build.BuildId)'
 
@@ -20,3 +19,6 @@ steps:
     Dockerfile: '$(dockerfilePath)'
     tags: |
       $(tag)
+  env:
+    DOCKER_BUILDKIT: 1
+    COMPOSE_DOCKER_CLI_BUILD: 1
